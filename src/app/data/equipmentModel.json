@@ -1,0 +1,12 @@
+[
+  {
+    "id": "cffa3d3b-07cb-4394-a2fb-d3dba261e538",
+    "name": "Caminhão de carga",
+    "hourlyEarnings": [
+      {
+        "equipmentStateId": "261cb9b0-5b42-41d8-89c4-5a976e4c92f9",
+        "value": 100
+      }
+    ]
+  }
+]
