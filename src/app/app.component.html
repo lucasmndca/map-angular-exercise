@@ -1,7 +1,1 @@
-<ul>
-  <li *ngFor="let equipment of equipment$ | async">Nome: {{ equipment?.name }} | Modelo: {{ equipment?.modelName}} |
-    Estado: <span *ngIf="!!equipment?.state" [ngStyle]="{'background-color': equipment?.state?.color}">{{
-      equipment?.state?.name}}</span>
-    <span *ngIf="!equipment?.state">---</span>
-  </li>
-</ul>
+<app-map [data]="equipment$ | async" />

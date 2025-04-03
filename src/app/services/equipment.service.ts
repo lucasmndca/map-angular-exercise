@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 
 import equipmentJson from '../data/equipment.json';
 import equipmentModel from '../data/equipmentModel.json';
-import equipmentState from '../data/equipmentState.json';
+import equipmentPositionHistory from '../data/equipmentPositionHistory.json';
 
 @Injectable({
   providedIn: 'root',
@@ -17,19 +17,14 @@ export class EquipmentService {
     );
   }
 
-  private getEquipmentState(equipmentModelId: string) {
-    const model = equipmentModel?.find(
-      (model) => model.id === equipmentModelId
+  private getPositionHistory(equipmentId: string): Model.Position[] {
+    const positionHistory = equipmentPositionHistory.filter(
+      (history) => history.equipmentId === equipmentId
     );
 
-    if (!model) {
-      return null;
-    }
+    if (!positionHistory || positionHistory?.length === 0) return [];
 
-    const lastStateId = model?.hourlyEarnings?.[0]?.equipmentStateId;
-    const stateObj = equipmentState?.find((state) => state.id === lastStateId);
-
-    return stateObj ?? null;
+    return positionHistory;
   }
 
   getEquipment(): Observable<Model.Equipment[]> {
@@ -37,7 +32,7 @@ export class EquipmentService {
       equipmentJson.map((equipment) => ({
         ...equipment,
         modelName: this.getModelName(equipment.equipmentModelId),
-        state: this.getEquipmentState(equipment.equipmentModelId),
+        positionHistory: this.getPositionHistory(equipment.id),
       }))
     );
   }
