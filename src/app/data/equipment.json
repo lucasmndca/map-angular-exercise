@@ -3,5 +3,10 @@
     "id": "9d7be251-2b59-4247-91d4-4349b31a066d",
     "equipmentModelId": "cffa3d3b-07cb-4394-a2fb-d3dba261e538",
     "name": "CA-001"
+  },
+  {
+    "id": "c942f5f5-0a10-436f-8c66-d4c0f25a8d72",
+    "equipmentModelId": "775923b2-a1fa-460c-87d6-ac69c1bf95d2",
+    "name": "CA-002"
   }
 ]

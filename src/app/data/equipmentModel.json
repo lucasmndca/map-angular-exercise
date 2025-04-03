@@ -8,5 +8,15 @@
         "value": 100
       }
     ]
+  },
+  {
+    "id": "775923b2-a1fa-460c-87d6-ac69c1bf95d2",
+    "name": "Caminhão de carga Tipo 2",
+    "hourlyEarnings": [
+      {
+        "equipmentStateId": "19b548b9-b368-4093-93dc-ef495c472d7b",
+        "value": 85
+      }
+    ]
   }
 ]

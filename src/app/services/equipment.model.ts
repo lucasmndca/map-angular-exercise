@@ -4,5 +4,6 @@ export namespace EquipmentModel {
     equipmentModelId: string;
     modelName: string;
     name: string;
+    state: { name: string; color: string } | null;
   }
 }
